@@ -1,0 +1,44 @@
+<div class="home">
+    <%- partial('widget/header_body',{message:theme.headers.home.message,icon:theme.headers.home.icon}) %>
+    <div class="main">
+        <div class="feed move" id="content">
+            <% site.posts.each(function (post,i) { %>
+                <div class="feed-display">
+                    <a href="<%- url_for(post.path) %>">
+                        <h2 class="feed-title">
+                            <%= post.title %>
+                        </h2>
+                        <div class="info-data">
+                            <%- date(post.date, "YYYY-MM-DD HH:MM:SS" ) %>
+                        </div>
+                        <% if(post.cover){ %>
+                            <img src="<%= post.cover %>" alt="Aresli">
+                        <% }else{ %>
+                            <img src="<%- theme.default_cover %>" alt="Aresli">
+                        <% } %>
+                    </a>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+    <div class="change-page">
+		<% if(page.prev !==0){ %>
+			<div class="p-page">
+				<a href="<%- url_for(page.prev_link) %>">
+					<div class="previous">
+						上一页
+					</div>
+				</a>
+			</div>
+			<% } %>
+				<% if(page.next !==0){ %>
+					<div class="n-page">
+						<a href="<%- url_for(page.next_link) %>">
+							<div class="next">
+								下一页
+							</div>
+						</a>
+					</div>
+					<% } %>
+	</div>
+</div>

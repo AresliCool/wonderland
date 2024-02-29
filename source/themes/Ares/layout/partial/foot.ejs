@@ -1,0 +1,13 @@
+<div class="footer">
+	<div class="Copyright">
+		©<%= new Date().getFullYear() %>
+	</div>
+	<div class="contact">
+		<% theme.bottomIcon.forEach(item =>{%>
+		<a href="<%= item.toUrl %>">
+			<img src="<%= item.iconLink %>" alt="Quiet主题">
+		</a>
+		<% }) %>
+	</div>
+</div>
+<%- partial('widget/gotop') %>

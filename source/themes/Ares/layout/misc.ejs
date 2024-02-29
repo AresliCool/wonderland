@@ -1,0 +1,40 @@
+<%- partial('partial/header',{name:'misc'}) %>
+<div class="home">
+    <%- partial('widget/header_body',{message:theme.headers.home.message,icon:theme.headers.home.icon}) %>
+    <div class="main">
+        <div class="feed move" id="content">
+            <% 
+                var miscPost = [];
+                site.posts.sort('date', -1).forEach(function (post){
+                    if(post.tags.findOne({name: 'art'})){
+                       
+                    }else if(post.tags.findOne({name: 'game'})){
+
+                    }else{
+                        miscPost.push(post);
+                    }
+                });
+                miscPost.forEach(function(post) { %>
+                    <div class="feed-display">
+                        <a href="<%- url_for(post.path) %>">
+                            <h2 class="feed-title">
+                                <%= post.title %>
+                            </h2>
+                            <div class="info-data">
+                                <%- date(post.date, "YYYY-MM-DD HH:MM:SS" ) %>
+                            </div>
+                            <% if(post.cover){ %>
+                                <img src="<%= post.cover %>" alt="Aresli">
+                            <% }else{ %>
+                                <img src="<%- theme.default_cover %>" alt="Aresli">
+                            <% } %>
+                        </a>
+                    </div>
+            <% }) %>
+        </div>
+    </div>
+</div>
+<script>
+    console.log(Object.getOwnPropertyNames(this));
+	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/79e/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+</script>

@@ -1,0 +1,17 @@
+
+<%- partial('partial/header',{name:'tags'}) %>
+<%
+    page.title =  "标签"
+%>
+<div class="tags">
+    <%- partial('widget/header_body',{message:theme.headers.tags.message,icon:theme.headers.tags.icon}) %>
+    <div class="tags-content" id="content">
+        <div class="tags-content-data">
+            <% site.tags.map(function(tag,i){  %>
+                <a href="<%- url_for(tag.path) %>" class="tag-<%= tag.name %>" value="<%= tag.name %>">
+                    <span># <%= tag.name %> <i><%= tag.length %></i> </span>
+                </a>
+            <% }) %>
+        </div>
+    </div>
+</div>

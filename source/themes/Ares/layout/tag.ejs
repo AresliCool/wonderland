@@ -1,0 +1,27 @@
+
+<%- partial('partial/header',{name:'tags'}) %>
+
+<div class="home">
+    <%- partial('widget/header_body',{message:"文章标签："+page.tag, icon:theme.headers.tags.icon}) %>
+    <div class="main">
+        <div class="feed move" id="content">
+            <% site.tags.findOne({name: page.tag}).posts.sort('date', -1).forEach(function(post) { %>
+                    <div class="feed-display">
+                        <a href="<%- url_for(post.path) %>">
+                            <h2 class="feed-title">
+                                <%= post.title %>
+                            </h2>
+                            <div class="info-data">
+                                <%- date(post.date, "YYYY-MM-DD HH:MM:SS" ) %>
+                            </div>
+                            <% if(post.cover){ %>
+                                <img src="<%= post.cover %>" alt="Aresli">
+                            <% }else{ %>
+                                <img src="<%- theme.default_cover %>" alt="Aresli">
+                            <% } %>
+                        </a>
+                    </div>
+            <% }) %>
+        </div>
+    </div>
+</div>

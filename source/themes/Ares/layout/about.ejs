@@ -1,0 +1,18 @@
+<%- partial('partial/header',{name:'about'}) %>
+<div class="about">
+    <div class="about-header-background">
+        <div class="about-header-background-content">
+            <img src="<%= page.portrait %>" alt="Aresli">
+            <h1> <%- page.name %>
+                <span><%- page.describe %></span>
+            </h1>
+        </div>
+    </div>
+    
+    <div class="about-content" id="content" >
+        <div id="article" class="about-content-info">
+            <%- page.content %>
+        </div>
+    </div>
+</div>
+

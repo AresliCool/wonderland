@@ -1,0 +1,41 @@
+logo: /images/logo.png
+icon: /images/logo.png
+title: 
+keyword: 
+web_description: 
+default_cover: 
+
+menus:
+  home: /
+  games: /games
+  arts: /arts
+  misc: /misc
+  tags: /tags
+  about: /about
+menus_title:
+  home: HOME
+  games: GAMES
+  arts: ARTS
+  misc: MISC
+  tags: TAGS
+  about: ABOUT
+
+headers:
+    home: {
+      message: "首页这里应该有一句话，你想想写点什么？",
+      icon: "/images/logo.png"
+    }
+    tags: {
+      message: "这里是一些展示的标签",
+      icon: "https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imgtags.svg"
+    }
+
+bottomIcon: 
+  - {
+    #描述名称
+    name: 'Github',
+    #图标    
+    iconLink: 'https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png',
+    #跳转链接    
+    toUrl: ''
+  }
